@@ -15,7 +15,12 @@ const Home = () => {
         <Details />
         <Cart />
       </Flex>
-    <Experimental />
+      <Flex
+        py={[0,5,10]}
+        justifyContent='center'
+      >
+        <Experimental />
+      </Flex>
     </Container>
   )
 }
