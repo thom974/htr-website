@@ -28,7 +28,7 @@ const Sponsors = (args) => {
       minW="full"
       left="0"
       textAlign="center"
-      position="absolute"
+      // position="absolute"
       id={args.id}
     >
       <Heading fontSize="3rem" mb="5">

@@ -15,6 +15,7 @@ import About from '../src/sections/About';
 import Streams from '../src/sections/Streams';
 import Schedule from '../src/sections/Schedule';
 import Sponsors from '../src/sections/Sponsors';
+import Team from '../src/sections/Team';
 
 const Home = () => {
 	return (
@@ -30,6 +31,7 @@ const Home = () => {
 				<Streams id="streams" />
 				<Schedule id="schedule" />
 				<Sponsors id="sponsors" />
+				<Team id="team" />
 			</Container>
 		</Container>
 	);
