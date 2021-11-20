@@ -13,7 +13,6 @@
     "@emotion/styled": "^11.6.0",
     "@fontsource/major-mono-display": "^4.5.0",
     "@fontsource/montserrat": "^4.5.1",
-    "dat.gui": "^0.7.7",
     "framer-motion": "^4.1.17",
     "gsap": "^3.8.0",
     "next": "12.0.4",
