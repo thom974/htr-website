@@ -94,8 +94,8 @@ export default class World {
   }
 
   setLights() {
-    this.ambientLight = new THREE.AmbientLight('#ffffff', 1)
-    this.directionalLight = new THREE.DirectionalLight('#c0caed', 5)
+    this.ambientLight = new THREE.AmbientLight('#ffffff', 0.25)
+    this.directionalLight = new THREE.DirectionalLight('#c0caed', 2)
     this.directionalLight.position.set(15,20,30)
     this.directionalLight.castShadow = true
     this.directionalLight.shadow.mapSize.set(2048,2048)
