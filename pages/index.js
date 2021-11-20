@@ -2,7 +2,7 @@ import { Container, Flex, VStack } from '@chakra-ui/react'
 
 import Details from '../src/sections/old/Details'
 import Cart from '../src/sections/old/Cart'
-import Experimental from '../src/sections/Experimental'
+import Experimental from '../src/sections/old/Experimental'
 
 const Home = () => {
   return (
