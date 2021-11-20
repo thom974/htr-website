@@ -1,6 +1,6 @@
-import { Text } from '@chakra-ui/layout';
+import { Text } from "@chakra-ui/layout";
 
-const Thin = args => {
-	return <Text textStyle="thin" {...args}></Text>;
+const Thin = (args) => {
+  return <Text textStyle="thin" {...args}></Text>;
 };
 export default Thin;

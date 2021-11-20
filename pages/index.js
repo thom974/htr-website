@@ -15,6 +15,8 @@ import About from '../src/sections/About';
 import Streams from '../src/sections/Streams';
 import Schedule from '../src/sections/Schedule';
 import Sponsors from '../src/sections/Sponsors';
+import Team from '../src/sections/Team';
+import RegisterContact from '../src/sections/RegisterContact';
 
 const Home = () => {
 	return (
@@ -26,10 +28,12 @@ const Home = () => {
 				<Description />
 				<Details />
 				<Canvas />
-				<About />
-				<Streams />
-				<Schedule />
-				<Sponsors />
+				<About id="about" />
+				<Streams id="streams" />
+				<Schedule id="schedule" />
+				<Sponsors id="sponsors" />
+				<Team id="team" />
+				<RegisterContact id="register" />
 			</Container>
 		</Container>
 	);
