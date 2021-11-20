@@ -1,10 +1,9 @@
 /**
- * THREE.JS IMPORTS
+ * IMPORTS
  */
 import { omitThemingProps } from "@chakra-ui/system";
 import * as THREE from "three";
 import Anim from "./Anim";
-
 import gsap from 'gsap'
 
 export default class World {
@@ -17,7 +16,7 @@ export default class World {
     this.scene = this.anim.scene;
     this.sizes = this.anim.sizes
     this.camera = this.anim.camera.instance;
-    this.renderer = this.anim.renderer.instance;
+    this.renderer = this.anim.renderer;
     this.resources = this.anim.resources
     this.cursor = {
       x: 0, 
@@ -58,6 +57,7 @@ export default class World {
       this.updateMaterial()
 
       this.ready = true
+      this.renderer.setPost()
     })
   }
 
@@ -188,8 +188,7 @@ export default class World {
   update() {
     if (this.ready) {
       this.updateCameraRotation()
+      this.renderer.composer.render();
     }
-
-    this.renderer.render(this.scene, this.camera);
   }
 }

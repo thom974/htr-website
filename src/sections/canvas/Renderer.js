@@ -4,6 +4,8 @@
 import * as THREE from "three";
 import Anim from "./Anim";
 
+import { SMAAEffect, EffectComposer, EffectPass, RenderPass, GammaCorrectionEffect, GlitchEffect } from 'postprocessing'
+
 export default class Renderer {
   constructor() {
     // Global access
@@ -11,6 +13,8 @@ export default class Renderer {
 
     // Main properties
     this.canvas = this.anim.canvas;
+    this.camera = this.anim.camera;
+    this.scene = this.anim.scene;
     this.sizes = this.anim.sizes;
 
     // Setup
@@ -33,6 +37,22 @@ export default class Renderer {
     this.instance.setSize(this.sizes.width, this.sizes.height);
     this.instance.setPixelRatio(this.sizes.pixelRatio);
     this.instance.set
+  }
+
+  setPost() {
+    this.composer = new EffectComposer(this.instance, {
+      frameBufferType: THREE.HalfFloatType
+    })
+
+    this.renderPass = new RenderPass(this.scene, this.camera.instance)
+    this.composer.addPass(this.renderPass)
+
+    this.glitchPass = new EffectPass(this.scene, new GlitchEffect())
+    this.glitchPass.mode = 3
+    this.composer.addPass(this.glitchPass)
+
+    this.smaaPass = new EffectPass(this.scene, new SMAAEffect())
+    this.composer.addPass(this.smaaPass)
   }
 
   resize() {
