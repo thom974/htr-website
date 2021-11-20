@@ -22,11 +22,11 @@ const Description = () => {
         <HStack
             alignItems='center'
             justifyContent='center'
-            mt='35'
+            mt='20'
             w='full'
         >
-            <Box mt='3'> 
-                <p style={{fontSize: '1.5em'}} id='desc'></p>
+            <Box mt='3' textStyle='thin' h='12'> 
+                <p id='desc'></p>
             </Box>
         </HStack>
     )

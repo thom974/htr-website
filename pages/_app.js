@@ -1,4 +1,6 @@
 import '@fontsource/major-mono-display';
+import '@fontsource/montserrat/300.css'
+import '@fontsource/montserrat/400.css'
 
 import '../styles/globals.css';
 

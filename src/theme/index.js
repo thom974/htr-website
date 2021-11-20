@@ -61,6 +61,12 @@ const theme = extendTheme(
 				},
 			},
 		},
+		textStyles: {
+			thin: {
+				fontSize: '1.5em',
+				fontWeight: 'light',
+			}
+		}
 	},
 	withDefaultColorScheme({
 		colorScheme: 'htr',

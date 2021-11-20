@@ -1,5 +1,5 @@
 /**
- * EXTERNAL EXPORTS
+ * EXTERNAL
  */
 import {
     Flex,
