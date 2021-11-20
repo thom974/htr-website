@@ -53,16 +53,10 @@ class Anim {
     this.camera.resize();
   }
 
-<<<<<<< HEAD
     update() {
         this.world.update()
         this.camera.update()
     }
-=======
-  update() {
-    this.world.update();
-  }
->>>>>>> 57bbd6feb819f0d971aebe1279148494e0d39f39
 }
 
 export default Anim;
