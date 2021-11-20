@@ -9,6 +9,8 @@ import Time from "./utils/Time";
 import Camera from "./Camera";
 import Renderer from "./Renderer";
 
+import sources from './sources'
+
 import World from "./World";
 
 /**
@@ -34,6 +36,7 @@ class Anim {
     this.scene = new THREE.Scene();
     this.camera = new Camera();
     this.renderer = new Renderer();
+    this.resources = new Resources(sources)
 
     // The actual scene
     this.world = new World();

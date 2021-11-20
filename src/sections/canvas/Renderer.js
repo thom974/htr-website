@@ -21,17 +21,18 @@ export default class Renderer {
     this.instance = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
-      stencil: false,
-      depth: false,
+      depth: true
     });
 
     this.instance.physicallyCorrectLights = true;
     this.instance.outputEncoding = THREE.sRGBEncoding;
+    this.instance.toneMapping = THREE.CineonToneMapping
     this.instance.shadowMap.enabled = true;
-    this.instance.shadowMap.type = THREE.PCFShadowMap;
-    this.instance.setClearColor("#595b5e");
+    this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.instance.setClearColor("#ffffff");
     this.instance.setSize(this.sizes.width, this.sizes.height);
     this.instance.setPixelRatio(this.sizes.pixelRatio);
+    this.instance.set
   }
 
   resize() {

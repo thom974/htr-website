@@ -1,8 +1,11 @@
 /**
  * THREE.JS IMPORTS
  */
+import { omitThemingProps } from "@chakra-ui/system";
 import * as THREE from "three";
 import Anim from "./Anim";
+
+import gsap from 'gsap'
 
 export default class World {
   constructor() {
@@ -10,12 +13,52 @@ export default class World {
     this.anim = new Anim();
 
     // Main properties
+    this.canvas = this.anim.canvas
     this.scene = this.anim.scene;
+    this.sizes = this.anim.sizes
     this.camera = this.anim.camera.instance;
     this.renderer = this.anim.renderer.instance;
+    this.resources = this.anim.resources
+    this.cursor = {
+      x: 0, 
+      y: 0
+    }
+
+    // Useful variables
+    this.ready = false
+    this.cameraDistance = 0
+    this.cameraAngle = 0
+    this.currAnim = false
+    this.mouseOver = false
+
+    // Event listeners
+    this.canvas.addEventListener('mouseenter', (client) => {
+      this.mouseOver = true
+      if (!this.currAnim) {
+        this.currAnim = true
+        this.updateCameraZoom()
+      }
+    })
+
+    this.canvas.addEventListener('mouseleave', (client) => {
+      this.mouseOver = false
+      if (!this.currAnim) {
+        this.currAnim = true
+        this.updateCameraZoomExit()
+      }
+    })
 
     // Setup
-    this.setTest();
+    this.resources.on('ready', () => {
+      this.setFloor()
+      this.setModels()
+      this.setLights()
+      // this.setHelpers()
+      this.setCameraDistance()
+      this.updateMaterial()
+
+      this.ready = true
+    })
   }
 
   setTest() {
@@ -27,7 +70,126 @@ export default class World {
     this.scene.add(this.testMesh);
   }
 
+  setFloor() {
+    this.winterFloor = new THREE.Mesh(
+      new THREE.CircleGeometry(25, 25),
+      new THREE.MeshStandardMaterial({
+        color: '#9196a8'
+      })
+    )
+    this.winterFloor.position.y = -0.3
+    this.winterFloor.position.x = -2
+    this.winterFloorQuaternion = new THREE.Quaternion()
+    this.winterFloorQuaternion.setFromAxisAngle(new THREE.Vector3(1,0,0), -Math.PI * 0.5)
+    this.winterFloor.applyQuaternion(this.winterFloorQuaternion)
+    this.winterFloor.receiveShadow = true
+
+    this.scene.add(this.winterFloor)
+  }
+
+  setModels() {
+    this.winterModel = this.resources.items.winterScene.scene
+    this.winterModel.position.set(-2,-2.8,1)
+    this.scene.add(this.winterModel)
+  }
+
+  setLights() {
+    this.ambientLight = new THREE.AmbientLight('#ffffff', 1)
+    this.directionalLight = new THREE.DirectionalLight('#c0caed', 5)
+    this.directionalLight.position.set(15,20,30)
+    this.directionalLight.castShadow = true
+    this.directionalLight.shadow.mapSize.set(2048,2048)
+    this.directionalLight.shadow.normalBias = 0.05
+
+    this.directionalLight.shadow.camera.left = -20
+    this.directionalLight.shadow.camera.right = 20
+    this.directionalLight.shadow.camera.bottom = -15
+    this.directionalLight.shadow.camera.top = 20
+    this.directionalLight.shadow.camera.far = 60
+
+    this.scene.add(this.directionalLight, this.ambientLight)
+  }
+
+  setHelpers() {
+    this.axesHelper = new THREE.AxesHelper(10)
+    this.shadowCameraHelper = new THREE.CameraHelper(this.directionalLight.shadow.camera)
+    this.scene.add(this.axesHelper, this.shadowCameraHelper)
+  }
+
+  setCameraDistance() {
+    this.cameraDistance = this.camera.position.distanceTo(new THREE.Vector3(0))
+  }
+
+  updateMaterial() {
+    this.scene.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.material.side = THREE.DoubleSide
+        child.castShadow = true
+      }
+    })
+  }
+
+  updateCameraRotation() {
+    this.cameraAngle -= Math.PI * 0.0003
+    this.camera.position.x = this.cameraDistance * Math.cos(this.cameraAngle)
+    this.camera.position.z = this.cameraDistance * Math.sin(this.cameraAngle)
+  }
+
+  updateCameraZoom() {
+    gsap.to(this.camera, {
+      zoom: 3,
+      duration: 0.5,
+      ease: 'power4',
+      onUpdate: () => {
+        this.camera.updateProjectionMatrix()
+      },
+      onComplete: () => {
+        if (!this.mouseOver) {
+          gsap.to(this.camera, {
+            zoom: 1.5,
+            duration: 0.5,
+            ease: 'bounce',
+            onUpdate: () => {
+              this.camera.updateProjectionMatrix()
+            }
+          })
+        }
+
+        this.currAnim = false
+      }
+    })
+  }
+
+  updateCameraZoomExit() {
+    gsap.to(this.camera, {
+      zoom: 1.5,
+      duration: 0.5,
+      ease: 'bounce',
+      onUpdate: () => {
+        this.camera.updateProjectionMatrix()
+      },
+      onComplete: () => {
+        if (this.mouseOver) {
+          gsap.to(this.camera, {
+            zoom: 3,
+            duration: 0.5,
+            ease: 'power4',
+            onUpdate: () => {
+              this.camera.updateProjectionMatrix()
+            }
+          })
+        }
+
+        this.currAnim = false
+      }
+    })
+  }
+
   update() {
+    if (this.ready) {
+      this.updateCameraRotation()
+    }
+
     this.renderer.render(this.scene, this.camera);
   }
 }
