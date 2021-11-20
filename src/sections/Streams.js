@@ -16,7 +16,7 @@ const StreamText = args => {
 			<Heading fontSize="2rem" textAlign={textAlign}>
 				{args.header}
 			</Heading>
-			<Thin mt="12" textAlign={textAlign} lineHeight="2rem">
+			<Thin mt="12" textAlign={textAlign} lineHeight="2rem" fontSize="14px">
 				{args.content}
 			</Thin>
 		</Container>

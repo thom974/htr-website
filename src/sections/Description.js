@@ -1,71 +1,49 @@
 /**
  * EXTERNAL EXPORTS
  */
-import {
-    HStack,
-    Text,
-    Box
-} from '@chakra-ui/react'
+import { HStack, Text, Box } from '@chakra-ui/react';
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
-import gsap from 'gsap'
-import { TextPlugin } from 'gsap/dist/TextPlugin'
-gsap.registerPlugin(TextPlugin)
+import gsap from 'gsap';
+import { TextPlugin } from 'gsap/dist/TextPlugin';
+gsap.registerPlugin(TextPlugin);
 
 const Description = () => {
-    useEffect(() => {
-        animateText(1)
-    })
-    
-    return (
-        <HStack
-            alignItems='center'
-            justifyContent='center'
-            mt='20'
-            w='full'
-        >
-            <Box mt='3' textStyle='thin' h='12'> 
-                <p id='desc'></p>
-            </Box>
-        </HStack>
-    )
-}
+	useEffect(() => {
+		animateText(1);
+	});
 
-const animateText = (phrase) => {
-    let text = ''
-    phrase = phrase > 4 ? 1 : phrase
-    switch(phrase) {
-        case 1:
-            text = 'design.'
-            break
-        case 2:
-            text = 'collaborate.'
-            break
-        case 3:
-            text = 'innovate.'
-            break
-        case 4:
-            text = 'develop.'
-            break
-    }   
+	return (
+		<HStack alignItems="center" justifyContent="center" mt="20" w="full">
+			<Box mt="3" textStyle="thin" h="12">
+				<p id="desc"></p>
+			</Box>
+		</HStack>
+	);
+};
+const phrases = ['design.', 'collaborate.', 'innovate.', 'develop.']; // Come on thomas
+const animateText = phrase => {
+	let text = '';
+	phrase %= phrases.length;
+	text = phrases[phrase];
 
-    const tl = gsap.timeline({
-        repeat: 1,
-        repeatDelay: 2,
-        yoyo: true, 
-        onComplete: () => {
-            animateText(phrase + 1)
-        }
-    })
+	const tl = gsap.timeline({
+		repeat: 1,
+		repeatDelay: 2,
+		yoyo: true,
+		onComplete: () => {
+			animateText(phrase + 1);
+		},
+	});
 
-    tl.to('#desc', {
-        text: {
-            value: text
-        },
-        duration: 0.5,
-        ease: 'none',
-    })
-}
+	tl.to('#desc', {
+		text: {
+			value: text,
+		},
+		duration: 0.5,
+		ease: 'none',
+	});
+};
 
-export default Description
+export default Description;
