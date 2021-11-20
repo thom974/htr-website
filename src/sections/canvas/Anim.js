@@ -56,6 +56,7 @@ class Anim {
 
     update() {
         this.world.update()
+        this.camera.update()
     }
 }
 
