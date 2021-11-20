@@ -30,8 +30,8 @@ const Sponsors = () => {
 			textAlign="center"
 			position="absolute"
 		>
-			<Heading fontSize="3rem">Sponsors</Heading>
-			<Thin fontSize="1.25rem" mt="3">
+			<Heading fontSize="3rem" mb='5'>Sponsors</Heading>
+			<Thin fontSize="1rem">
 				checkout our awesome supporters!
 			</Thin>
 			<HStack justify="space-evenly" padding="16">

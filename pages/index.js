@@ -6,13 +6,15 @@ import { Container } from '@chakra-ui/react';
 /**
  * COMPONENTS
  */
-import Streams from '../src/sections/Streams';
 import Navigation from '../src/sections/Navigation';
 import Title from '../src/sections/Title';
 import Description from '../src/sections/Description';
 import Details from '../src/sections/Details';
-import Sponsors from '../src/sections/Sponsors';
+import Canvas from '../src/sections/Canvas';
+import About from '../src/sections/About';
+import Streams from '../src/sections/Streams';
 import Schedule from '../src/sections/Schedule';
+import Sponsors from '../src/sections/Sponsors';
 
 const Home = () => {
 	return (
@@ -23,6 +25,8 @@ const Home = () => {
 				<Title />
 				<Description />
 				<Details />
+				<Canvas />
+				<About />
 				<Streams />
 				<Schedule />
 				<Sponsors />

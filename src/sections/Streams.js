@@ -16,7 +16,7 @@ const StreamText = args => {
 			<Heading fontSize="2rem" textAlign={textAlign}>
 				{args.header}
 			</Heading>
-			<Thin mt="12" textAlign={textAlign} lineHeight="2rem" fontSize="14px">
+			<Thin mt="12" textAlign={textAlign} lineHeight="2rem" fontSize="0.9rem">
 				{args.content}
 			</Thin>
 		</Container>
@@ -26,8 +26,8 @@ const StreamText = args => {
 const Streams = () => {
 	return (
 		<VStack w="full" align="center" h="auto" mt="24">
-			<Heading fontSize="3rem">Streams</Heading>
-			<Thin fontSize="1.25rem">the competitions you can join</Thin>
+			<Heading fontSize="3rem" mb='6'>Streams</Heading>
+			<Thin fontSize="1rem">the competitions you can join</Thin>  // This subheading right here has a padding of 8px for some reason, can't seem to fix it 
 			<SimpleGrid columns="2" w="100%" pt="5">
 				<StreamText>
 					{{

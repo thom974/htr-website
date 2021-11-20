@@ -26,8 +26,8 @@ const Times = [
 const Schedule = () => {
 	return (
 		<Container textAlign="center" mt="16">
-			<Heading fontSize="3rem">Schedule</Heading>
-			<Thin fontSize="1.25rem">event activities, hour by hour</Thin>
+			<Heading fontSize="3rem" mb='5'>Schedule</Heading>
+			<Thin fontSize="1rem">event activities, hour by hour</Thin>
 			<VStack mt="8">
 				{Times.map(time => {
 					return time.jsx;
