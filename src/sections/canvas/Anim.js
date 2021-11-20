@@ -1,62 +1,61 @@
- /**
-  * IMPORTS
-  */
- import * as THREE from 'three'
+/**
+ * IMPORTS
+ */
+import * as THREE from "three";
 
-import Resources from './utils/Resources'
-import Sizes from './utils/Sizes'
-import Time from './utils/Time'
-import Camera from './Camera'
-import Renderer from './Renderer'
+import Resources from "./utils/Resources";
+import Sizes from "./utils/Sizes";
+import Time from "./utils/Time";
+import Camera from "./Camera";
+import Renderer from "./Renderer";
 
-import World from './World'
+import World from "./World";
 
- /**
+/**
  * Singleton class
  */
 
-let instance = null
+let instance = null;
 
 class Anim {
-    constructor(canvas) {
-
-        // Singleton setup
-        if (instance) {
-            return instance
-        } 
-        instance = this
-
-        // Main properties
-        this.canvas = canvas
-
-        this.sizes = new Sizes()
-        this.time = new Time()
-
-        this.scene = new THREE.Scene()
-        this.camera = new Camera()
-        this.renderer = new Renderer()
-
-        // The actual scene
-        this.world = new World()
-
-        // Event listeners
-        this.sizes.on('resize', () => {
-            this.resize()
-        })
-
-        this.time.on('tick', () => {
-            this.update()
-        })
+  constructor(canvas) {
+    // Singleton setup
+    if (instance) {
+      return instance;
     }
+    instance = this;
 
-    resize() {
-        this.renderer.resize()
-        this.camera.resize()
-    }
+    // Main properties
+    this.canvas = canvas;
 
-    update() {
-        this.world.update()
-    }
+    this.sizes = new Sizes();
+    this.time = new Time();
+
+    this.scene = new THREE.Scene();
+    this.camera = new Camera();
+    this.renderer = new Renderer();
+
+    // The actual scene
+    this.world = new World();
+
+    // Event listeners
+    this.sizes.on("resize", () => {
+      this.resize();
+    });
+
+    this.time.on("tick", () => {
+      this.update();
+    });
+  }
+
+  resize() {
+    this.renderer.resize();
+    this.camera.resize();
+  }
+
+  update() {
+    this.world.update();
+  }
 }
 
-export default Anim
+export default Anim;
