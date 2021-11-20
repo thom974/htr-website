@@ -6,29 +6,28 @@ import {
 	Container,
 	Divider,
 } from '@chakra-ui/layout';
+import Thin from './helpers';
 
 const StreamText = args => {
 	args = args.children;
 	const textAlign = args.right ? 'right' : 'left';
 	return (
 		<Container>
-			<Heading fontSize="1.5rem" textAlign={textAlign}>
+			<Heading fontSize="2rem" textAlign={textAlign}>
 				{args.header}
 			</Heading>
-			<Text mt="12" textAlign={textAlign} lineHeight="2rem">
+			<Thin mt="12" textAlign={textAlign} lineHeight="2rem">
 				{args.content}
-			</Text>
+			</Thin>
 		</Container>
 	);
 };
 
 const Streams = () => {
 	return (
-		<VStack w="full" align="center" h="auto">
+		<VStack w="full" align="center" h="auto" mt="24">
 			<Heading fontSize="3rem">Streams</Heading>
-			<Text fontWeight="bold" fontSize="1.25rem">
-				the competitions you can join
-			</Text>
+			<Thin fontSize="1.25rem">the competitions you can join</Thin>
 			<SimpleGrid columns="2" w="100%" pt="5">
 				<StreamText>
 					{{
