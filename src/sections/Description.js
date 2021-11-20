@@ -15,7 +15,7 @@ const Description = () => {
   });
 
   return (
-    <HStack alignItems="center" justifyContent="center" mt="20" w="full">
+    <HStack alignItems="center" justifyContent="center" mt="8" w="full">
       <Box mt="3" textStyle="thin" h="12">
         <p id="desc"></p>
       </Box>

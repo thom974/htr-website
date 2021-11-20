@@ -2,7 +2,7 @@ import { HStack, Heading } from "@chakra-ui/react";
 
 const Details = () => {
   return (
-    <HStack alignItems="center" justifyContent="space-evenly" mt="24" w="full">
+    <HStack alignItems="center" justifyContent="space-evenly" mt="8" w="full">
       <Heading fontSize="xl">Virtual Hackathon</Heading>
       <Heading fontSize="xl">/</Heading>
       <Heading fontSize="xl">December 11th, 2021</Heading>

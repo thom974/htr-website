@@ -75,7 +75,7 @@ const Members = [
 Members.push();
 const Team = (args) => {
   return (
-    <VStack id={args.id}>
+    <VStack id={args.id} mt='100'>
       <Heading>Meet The Team</Heading>
       <Thin>...</Thin>
       <Grid

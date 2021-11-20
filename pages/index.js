@@ -1,7 +1,7 @@
 /**
  * EXTERNAL IMPORTS
  */
-import { Container } from '@chakra-ui/react';
+import { Container, Divider } from '@chakra-ui/react';
 
 /**
  * COMPONENTS
@@ -18,20 +18,29 @@ import Sponsors from '../src/sections/Sponsors';
 import Team from '../src/sections/Team';
 import RegisterContact from '../src/sections/RegisterContact';
 
+const Divide = () => {
+	return <Divider mt='100'></Divider>
+}
+
 const Home = () => {
 	return (
 		<Container maxW="full" p="0" h="auto" alignItems="center">
 			<Navigation />
 
-			<Container maxW="75vw" p="0" mt="40" h="auto">
+			<Container maxW="75vw" p="0" mt="16" h="auto">
 				<Title />
 				<Description />
 				<Details />
 				<Canvas />
+				<Divide	/>
 				<About id="about" />
+				<Divide	/>
 				<Streams id="streams" />
+				<Divide	/>
 				<Schedule id="schedule" />
+				<Divide	/>
 				<Sponsors id="sponsors" />
+				<Divide	/>
 				<Team id="team" />
 				<RegisterContact id="register" />
 			</Container>
