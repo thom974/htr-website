@@ -29,8 +29,9 @@ const brandRing = {
 const theme = extendTheme(
 	{
 		fonts: {
-			// heading: `Montserrat, ${base.fonts?.heading}`,
-			// body: `Inter, ${base.fonts?.body}`,
+			heading: `Major Mono Display, ${base.fonts?.heading}`,
+			body: `Montserrat, ${base.fonts?.body}`,
+			default: `Montserrat, ${base.fonts?.body}`,
 		},
 		colors: {
 			htr: { 600: '#5078af', 500: '#699DE4', 400: '#A4C2F4' }, // 500 is normal, 400 is light, 600 is darker

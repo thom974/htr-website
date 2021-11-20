@@ -1,17 +1,19 @@
-import '../styles/globals.css'
+import '@fontsource/major-mono-display';
 
-import { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import '../styles/globals.css';
 
-import theme from '../src/theme/index'
-import '../src/theme/styles.css'
+import { AppProps } from 'next/app';
+import { ChakraProvider } from '@chakra-ui/react';
+
+import theme from '../src/theme/index';
+import '../src/theme/styles.css';
 
 const MyApp = ({ Component, pageProps }) => {
-  return(
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
-}
+	return (
+		<ChakraProvider theme={theme}>
+			<Component {...pageProps} />
+		</ChakraProvider>
+	);
+};
 
-export default MyApp
+export default MyApp;
