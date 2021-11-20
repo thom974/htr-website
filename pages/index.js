@@ -26,10 +26,10 @@ const Home = () => {
 				<Description />
 				<Details />
 				<Canvas />
-				<About />
-				<Streams />
-				<Schedule />
-				<Sponsors />
+				<About id="about" />
+				<Streams id="streams" />
+				<Schedule id="schedule" />
+				<Sponsors id="sponsors" />
 			</Container>
 		</Container>
 	);

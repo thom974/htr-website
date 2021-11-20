@@ -23,9 +23,9 @@ const StreamText = (args) => {
   );
 };
 
-const Streams = () => {
+const Streams = (args) => {
   return (
-    <VStack w="full" align="center" h="auto" mt="24">
+    <VStack id={args.id} w="full" align="center" h="auto" mt="24">
       <Heading fontSize="3rem" mb="6">
         Streams
       </Heading>

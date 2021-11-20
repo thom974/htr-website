@@ -21,9 +21,9 @@ const AboutText = () => {
   );
 };
 
-const About = () => {
+const About = (args) => {
   return (
-    <VStack mt="100" w="full" alignItems="flex-start">
+    <VStack mt="100" w="full" alignItems="flex-start" id={args.id}>
       <Heading fontSize="3rem" mb="16">
         Irhs{"'"} Annual Hackathon
       </Heading>

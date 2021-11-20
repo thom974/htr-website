@@ -23,9 +23,9 @@ const Times = [
   new Time("10:00 - 11:00", "Workshop #1 - Introduction to Python"),
 ];
 
-const Schedule = () => {
+const Schedule = (args) => {
   return (
-    <Container textAlign="center" mt="16">
+    <Container textAlign="center" mt="16" id={args.id}>
       <Heading fontSize="3rem" mb="5">
         Schedule
       </Heading>

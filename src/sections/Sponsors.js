@@ -21,7 +21,7 @@ const sponsors = [
   new Sponsor("Long Sponsor Name"),
 ];
 
-const Sponsors = () => {
+const Sponsors = (args) => {
   return (
     <Container
       mt="24"
@@ -29,6 +29,7 @@ const Sponsors = () => {
       left="0"
       textAlign="center"
       position="absolute"
+      id={args.id}
     >
       <Heading fontSize="3rem" mb="5">
         Sponsors
