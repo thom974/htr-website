@@ -1,26 +1,24 @@
+/**
+ * EXTERNAL IMPORTS
+ */
 import { Container, Flex, VStack } from '@chakra-ui/react'
 
-import Details from '../src/sections/old/Details'
-import Cart from '../src/sections/old/Cart'
-import Experimental from '../src/sections/old/Experimental'
+/**
+ * COMPONENTS 
+ */
+import Navigation from '../src/sections/Navigation'
+import Title from '../src/sections/Title'
+
 
 const Home = () => {
   return (
-    <Container maxW='container.xl' p={0} h='auto'>
-      <Flex 
-        h={{ base: 'auto', md: '100vh' }}
-        py={[0,10,20]} 
-        direction={ { base: 'column-reverse', md: 'row' }}
-      >
-        <Details />
-        <Cart />
-      </Flex>
-      <Flex
-        py={[0,5,10]}
-        justifyContent='center'
-      >
-        <Experimental />
-      </Flex>
+    <Container maxW='full' p='0' h='auto' alignItems='center'>
+      <Navigation />
+
+      <Container maxW='75vw' p='0' mt='40' h='auto'>
+        <Title />
+
+      </Container>
     </Container>
   )
 }
