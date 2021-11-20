@@ -12,6 +12,7 @@ import Title from '../src/sections/Title';
 import Description from '../src/sections/Description';
 import Details from '../src/sections/Details';
 import Sponsors from '../src/sections/Sponsors';
+import Schedule from '../src/sections/Schedule';
 
 const Home = () => {
 	return (
@@ -23,6 +24,7 @@ const Home = () => {
 				<Description />
 				<Details />
 				<Streams />
+				<Schedule />
 				<Sponsors />
 			</Container>
 		</Container>
