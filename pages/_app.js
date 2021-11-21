@@ -13,6 +13,13 @@ import '../src/theme/styles.css';
 const MyApp = ({ Component, pageProps }) => {
 	return (
 		<ChakraProvider theme={theme}>
+			<style global jsx>
+				{`
+					html {
+						scroll-behavior: smooth;
+					}
+				`}
+			</style>
 			<Component {...pageProps} />
 		</ChakraProvider>
 	);
