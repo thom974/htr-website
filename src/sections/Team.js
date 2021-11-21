@@ -7,6 +7,7 @@ import Thin from "./helpers";
 function Member({ name, icon }) {
   return (
     <Flex
+      boxShadow="md"
       backgroundColor={useColorModeValue("gray.200", "gray.700")}
       borderRadius="20px"
       padding="5"
