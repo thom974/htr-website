@@ -7,6 +7,7 @@ function Sponsor({ name }) {
   return (
     <Flex
       boxShadow="md"
+      _hover={{ boxShadow: "outline" }}
       backgroundColor={useColorModeValue("gray.200", "gray.700")}
       borderRadius="20px"
       padding="20"
