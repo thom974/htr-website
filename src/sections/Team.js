@@ -1,20 +1,13 @@
 /* eslint-disable react/jsx-key */
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Image, Img } from "@chakra-ui/image";
-import {
-  Box,
-  Center,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  VStack,
-} from "@chakra-ui/layout";
+import { Box, Flex, Grid, Heading, VStack } from "@chakra-ui/layout";
 import Thin from "./helpers";
 
 function Member({ name, icon }) {
   return (
     <Flex
-      background="black"
+      backgroundColor={useColorModeValue("gray.200", "gray.700")}
       borderRadius="20px"
       padding="5"
       boxSize="30vh"
@@ -75,7 +68,7 @@ const Members = [
 Members.push();
 const Team = (args) => {
   return (
-    <VStack id={args.id} mt='100'>
+    <VStack id={args.id} mt="100">
       <Heading>Meet The Team</Heading>
       <Thin>...</Thin>
       <Grid
