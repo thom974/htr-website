@@ -1,6 +1,12 @@
 import { Container, Flex, Heading, VStack } from "@chakra-ui/layout";
 import Thin from "./helpers";
 
+import { useEffect } from 'react'
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 class Time {
   constructor(time, name) {
     this.time = time;
@@ -24,6 +30,20 @@ const Times = [
 ];
 
 const Schedule = (args) => {
+  useEffect(() => {
+    for (let i=0; i < Times.length; i++) {
+      gsap.from(`.schedule${i}`, {
+        scrollTrigger: {
+          trigger: `.schedule${i}`,
+          start: 'bottom bottom'
+        },
+        x: -50 + -50 * i,
+        opacity: 0,
+        duration: 2
+      })
+    }
+  })
+
   return (
     <Container textAlign="center" mt="16" id={args.id}>
       <Heading fontSize="3rem" mb="5">
@@ -31,8 +51,12 @@ const Schedule = (args) => {
       </Heading>
       <Thin fontSize="1rem">event activities, hour by hour</Thin>
       <VStack mt="8">
-        {Times.map((time) => {
-          return time.jsx;
+        {Times.map((time, index) => {
+          return (
+            <div className={`schedule${index}`}>
+              {time.jsx}
+            </div>
+          )
         })}
       </VStack>
     </Container>

@@ -4,6 +4,12 @@
 import { Flex, HStack, VStack, Heading } from "@chakra-ui/react";
 import Thin from "./helpers";
 
+import { useEffect } from 'react'
+
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger)
+
 const AboutText = () => {
   return (
     <Thin pl="24" lineHeight="4rem" fontSize="1.25rem">
@@ -22,12 +28,38 @@ const AboutText = () => {
 };
 
 const About = (args) => {
+  useEffect(() => {
+    gsap.from('.aboutHeading', {
+      scrollTrigger: {
+        trigger: '.aboutHeading',
+        start: 'bottom bottom'
+      },
+      x: -50,
+      opacity: 0,
+      duration: 1
+    })
+
+    gsap.from('.aboutText', {
+      scrollTrigger: {
+        trigger: '.aboutText',
+        start: 'center bottom'
+      },
+      x: 50,
+      opacity: 0,
+      duration: 1
+    })
+  })
+
   return (
     <VStack mt="100" w="full" alignItems="flex-start" id={args.id}>
-      <Heading fontSize="3rem" mb="16">
-        Irhs{"'"} Annual Hackathon
-      </Heading>
-      <AboutText />
+      <div className='aboutHeading'>
+        <Heading fontSize="3rem" mb="16">
+          Irhs{"'"} Annual Hackathon
+        </Heading>
+      </div>
+      <div className='aboutText'>
+        <AboutText />
+      </div>
     </VStack>
   );
 };

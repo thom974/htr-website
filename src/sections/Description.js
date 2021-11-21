@@ -12,6 +12,7 @@ gsap.registerPlugin(TextPlugin);
 const Description = () => {
   useEffect(() => {
     animateText(1);
+    gsap.from('#desc', { opacity: 0, duration: 2 })
   });
 
   return (
