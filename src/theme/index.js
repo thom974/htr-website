@@ -35,6 +35,7 @@ const theme = extendTheme(
     },
     colors: {
       htr: { 600: "#5078af", 500: "#699DE4", 400: "#A4C2F4" }, // 500 is normal, 400 is light, 600 is darker
+      htr2: {}
     },
     components: {
       Input: { ...inputSelectStyle },
@@ -66,6 +67,26 @@ const theme = extendTheme(
           color: mode("gray.800", "gray.100"),
         }),
       },
+      AccordionButton: {
+        variants: {
+          primary: (props) => ({
+            _hover: {
+              backgroundColor: mode('gray.800', 'gray.100')
+            },
+
+            _focus: {
+              ringColor: 'gray.800'
+            }
+          })
+        }
+      },
+      HStack: {
+        variants: {
+          primary: (props) => {
+            backgroundColor: mode('gray.800', 'white')(props)
+          }
+        }
+      }
     },
     textStyles: {
       thin: {

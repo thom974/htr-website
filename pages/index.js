@@ -17,6 +17,8 @@ import Schedule from '../src/sections/Schedule';
 import Sponsors from '../src/sections/Sponsors';
 import Team from '../src/sections/Team';
 import RegisterContact from '../src/sections/RegisterContact';
+import FAQ from '../src/sections/FAQ';
+import Footer from '../src/sections/Footer';
 const Divide = () => {
 	return <Divider mt="100"></Divider>;
 };
@@ -38,11 +40,15 @@ const Home = () => {
 				<Divide />
 				<Schedule id="schedule" />
 				<Divide />
+				<FAQ />
+				<Divide />
 				<Sponsors id="sponsors" />
 				<Divide />
 				<Team id="team" />
 				<Divide />
 				<RegisterContact id="register" />
+				<Divide />
+				<Footer />
 			</Container>
 		</Container>
 	);

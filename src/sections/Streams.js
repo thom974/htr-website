@@ -88,7 +88,7 @@ const Streams = (args) => {
             {{
               header: "Business Stream",
               content:
-                "For the entrepreneurially driven students will to pursue their newfound\nideas and interests. If you have a business concept in mind and want to see how it might fare in the real world, you're in the right place. Pitch your idea with or without deliverables, no coding required.",
+                "For the entrepreneurially driven students willing to pursue their newfound\nideas and interests. If you have a business concept in mind and want to see how it might fare in the real world, you're in the right place. Pitch your idea with or without deliverables, no coding required.",
               right: true,
             }}
           </StreamText>

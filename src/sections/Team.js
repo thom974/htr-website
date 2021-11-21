@@ -80,9 +80,9 @@ const Team = (args) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.memberGrid',
-        start: 'bottom bottom'
+        start: 'center bottom'
       },
-      delay: 0.4
+      delay: 0
     })
 
     for (let i=0; i<Members.length; i++) {
