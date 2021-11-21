@@ -25,7 +25,8 @@ export default class Renderer {
     this.instance = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
-      depth: true
+      depth: true,
+      alpha: true
     });
 
     this.instance.physicallyCorrectLights = true;
@@ -33,7 +34,7 @@ export default class Renderer {
     this.instance.toneMapping = THREE.CineonToneMapping
     this.instance.shadowMap.enabled = true;
     this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
-    this.instance.setClearColor("#ffffff");
+    this.instance.setClearColor("#000000", 0);
     this.instance.setSize(this.sizes.width, this.sizes.height);
     this.instance.setPixelRatio(this.sizes.pixelRatio);
     this.instance.set

@@ -1,9 +1,10 @@
 /**
  * EXTERNAL
  */
-import { VStack } from "@chakra-ui/react";
 
 import { useEffect } from "react";
+
+import { VStack } from '@chakra-ui/react'
 
 import gsap from 'gsap'
  
@@ -14,7 +15,7 @@ import Anim from "./canvas/Anim";
 
 let instance = null;
 
-const Canvas = () => {
+const Canvas = () => {  
   useEffect(() => {
     const anim = new Anim(document.querySelector("canvas.webgl"));
     gsap.fromTo('.canvas', {

@@ -31,6 +31,15 @@ const Times = [
 
 const Schedule = (args) => {
   useEffect(() => {
+    gsap.from('.scheduleHeading', {
+      scrollTrigger: {
+        trigger: '.scheduleHeading',
+        start: 'bottom bottom'
+      },
+      x: -50,
+      opacity: 0
+    })
+
     for (let i=0; i < Times.length; i++) {
       gsap.from(`.schedule${i}`, {
         scrollTrigger: {
@@ -45,11 +54,13 @@ const Schedule = (args) => {
   })
 
   return (
-    <Container textAlign="center" mt="16" id={args.id}>
+    <Container textAlign="center" mt="24" id={args.id}>
+      <div className='scheduleHeading'>
       <Heading fontSize="3rem" mb="5">
         Schedule
       </Heading>
       <Thin fontSize="1rem">event activities, hour by hour</Thin>
+      </div>
       <VStack mt="8">
         {Times.map((time, index) => {
           return (

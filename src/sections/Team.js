@@ -4,6 +4,11 @@ import { Image, Img } from "@chakra-ui/image";
 import { Box, Flex, Grid, Heading, VStack } from "@chakra-ui/layout";
 import Thin from "./helpers";
 
+import { useEffect } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 function Member({ name, icon }) {
   return (
     <Flex
@@ -60,27 +65,58 @@ const Members = [
   />,
 ].map((member, i) => {
   return (
-    <Member
-      name={member.props.name}
-      icon={member.props.icon}
-      key={`Member: ${i}`}
-    ></Member>
+    <div className={`member${i}`}>
+      <Member
+        name={member.props.name}
+        icon={member.props.icon}
+        key={`Member: ${i}`}
+      ></Member>
+    </div>
   );
 });
-Members.push();
+
 const Team = (args) => {
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.memberGrid',
+        start: 'bottom bottom'
+      },
+      delay: 0.4
+    })
+
+    for (let i=0; i<Members.length; i++) {
+      const r = Math.floor(i / 4)
+      const c = i % 4
+
+      if (r % 2 == 0) {
+        tl.from(`.member${i}`, {
+          x: -50 + -50 * c,
+          opacity: 0
+        })
+      } else {
+        tl.from(`.member${i}`, {
+          x: 50 + 50 * c,
+          opacity: 0
+        })
+      }
+    }
+  })
+
   return (
     <VStack id={args.id} mt="100">
       <Heading>Meet The Team</Heading>
       <Thin>...</Thin>
-      <Grid
-        templateColumns="repeat(4,1fr)"
-        padding="5"
-        gap={10}
-        placeItems="center"
-      >
-        {[...Members]}
-      </Grid>
+      <div className='memberGrid'>
+        <Grid
+          templateColumns="repeat(4,1fr)"
+          pt="50"
+          gap={10}
+          placeItems="center"
+        >
+          {[...Members]}
+        </Grid>
+      </div>
     </VStack>
   );
 };

@@ -41,6 +41,7 @@ const Home = () => {
 				<Sponsors id="sponsors" />
 				<Divide />
 				<Team id="team" />
+				<Divide />
 				<RegisterContact id="register" />
 			</Container>
 		</Container>
