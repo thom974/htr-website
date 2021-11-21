@@ -13,16 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 const AboutText = () => {
   return (
     <Thin pl="24" lineHeight="4rem" fontSize="1.25rem">
-      Hack The Ridge is Iroquois Ridge High School’s annual hackathon and pitch
-      competition where students collaborate to come up with solutions to
-      real-world problems. It is taking place virtually on December 11th, 2021
-      from 9am to 9pm. Workshops and guest speakers will be building
-      participants to expand skill sets to be applied during the event and
-      onward. During the hackathon, you will form teams of up to four people,
-      and have a choice between the following:  come up with a creative
-      technological solution to any real-world problem of your choice, or pitch
-      a practical business idea that will thrive in today{"'"}s busy ecosystem.
-      (text is lacking edit for actual site) 
+      Hack The Ridge is Iroquois Ridge High School’s annual hackathon and pitch competition where students collaborate to come up with solutions to real-world problems. The event is taking place virtually, on Saturday, December 11th, 2021, from 9 AM to 9 PM. Workshops and guest speakers will be helping participants to expand their skill sets, which can not only be applied during the event but also onwards. During the event, participants will form teams of up to four people (though forming a team is not mandatory) and have a choice between the following: come up with a creative technological solution to any real-world problem of your choice, or pitch a practical business idea that will thrive in today's demanding ecosystem. 
     </Thin>
   );
 };

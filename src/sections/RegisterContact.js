@@ -1,5 +1,6 @@
-import { Flex, Heading, VStack, HStack } from "@chakra-ui/layout";
-import { RedditIcon } from "react-share";
+import { Flex, Heading, VStack, HStack, Link } from "@chakra-ui/layout";
+import { RedditIcon, EmailIcon, LivejournalIcon,  } from "react-share";
+import { SocialIcon } from 'react-social-icons'
 import Thin from "./helpers";
 
 import { useEffect } from 'react'
@@ -39,10 +40,39 @@ const RegisterContact = (args) => {
       </div>
       <div className='rcIcons'>
         <VStack direction="row" w="full" pt='16' alignItems='flex-start'>
-          <HStack pl='20' spacing={12}>
-            <RedditIcon />
-            <Thin fontSize='1rem'>description of thing here</Thin>
+          
+          <HStack pl='20' spacing={12} pb='6'>
+            <SocialIcon network='sharethis' />
+            <Thin fontSize='1rem'>
+              <Link 
+                href='https://docs.google.com/forms/d/1r8_S_RepQEqpBaR2SHO2B7iBX1AmAPgGZAg4JyorVmM/edit?usp=sharing '
+                isExternal
+              >
+                register here!
+              </Link>
+            </Thin>
           </HStack>
+
+          <HStack pl='20' spacing={12} pb='6'>
+            <SocialIcon network='email' />
+            <Thin fontSize='1rem'>hacktheridge@gmail.com</Thin>
+          </HStack>
+
+          <HStack pl='20' spacing={12} pb='6'>
+            <SocialIcon network='instagram'/>
+            <Thin fontSize='1rem'>@hacktheridge</Thin>
+          </HStack>
+
+          <HStack pl='20' spacing={12} pb='6'>
+            <SocialIcon network='discord'/>
+            <Thin fontSize='1rem'>coming soon!</Thin>
+          </HStack>
+
+          <HStack pl='20' spacing={12} pb='6'>
+            <SocialIcon network='rss'/>
+            <Thin fontSize='1rem'>devpost: coming soon!</Thin>
+          </HStack>
+
         </VStack>
       </div>
     </VStack>

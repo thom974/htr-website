@@ -27,6 +27,17 @@ const Times = [
   new Time("9:00 - 9:30", "Opening Ceremony"),
   new Time("9:30 - 10:00", "Team Finder Session"),
   new Time("10:00 - 11:00", "Workshop #1 - Introduction to Python"),
+  new Time("11:00 - 12:00", "Workshop #2 - TBD"),
+  new Time("12:00 - 1:00", "Lunch Break"),
+  new Time("1:00 - 2:00", "Workshop #3 - TBD"),
+  new Time("2:00 - 3:00", "Fun Event"),
+  new Time("3:00 - 4:00", "Workshop #4 - Intro to Web Development With Flask"),
+  new Time("4:00 - 5:00", "Workshop #5 - Intro to Game Dev with pygame"),
+  new Time("5:00 - 7:45", "No activities planned - wrap up coding!"),
+  new Time("7:45", "Project Deadline"),
+  new Time("7:45 - 8:45", "Judging"),
+  new Time("8:45 - 9:15", "Judge Deliberation"),
+  new Time("9:15 - 9:30", "Results & Closing Ceremony"),
 ];
 
 const Schedule = (args) => {

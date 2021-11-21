@@ -24,7 +24,7 @@ function Member({ name, icon }) {
     >
       <Heading textAlign="center">{name}</Heading>
       <Box boxSize="100px">
-        <Image src={icon} alt="Img Not found" borderRadius="full" />
+        <Image src={icon} alt="Img Not Found" borderRadius="full" />
       </Box>
     </Flex>
   );
@@ -32,35 +32,35 @@ function Member({ name, icon }) {
 
 const Members = [
   <Member
-    name="Justin Frank"
-    icon="https://avatars.githubusercontent.com/u/69999075?v=4"
+    name="Aayaan Naqvi"
+    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
+  />,
+  <Member
+    name="Yaser Nossibeh"
+    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
+  />,
+  <Member
+    name="Ernest Wang"
+    icon="https://cdn.discordapp.com/attachments/583816025808568336/912072900511690832/D1907643-8B21-4957-8863-D005861F452A.jpg"
   />,
   <Member
     name="Thomas Luc"
     icon="https://avatars.githubusercontent.com/u/74675902?v=4"
   />,
   <Member
-    name="Temp"
+    name="Justin Frank"
+    icon="https://avatars.githubusercontent.com/u/69999075?v=4"
+  />,
+  <Member
+    name="Vincent Sun"
+    icon="https://cdn.discordapp.com/attachments/909887057143431208/912062034730946641/AOh14GgtHb1KpxcQ7BrhuVszDKAmO1PxgZh7CrWGKqhos288-p-rw-no.png"
+  />,
+  <Member
+    name="Tudor Barsan"
     icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
   />,
   <Member
-    name="Temp"
-    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
-  />,
-  <Member
-    name="Temp"
-    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
-  />,
-  <Member
-    name="Temp"
-    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
-  />,
-  <Member
-    name="Temp"
-    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
-  />,
-  <Member
-    name="Temp"
+    name="Shayaan Kazi"
     icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
   />,
 ].map((member, i) => {
@@ -105,8 +105,8 @@ const Team = (args) => {
 
   return (
     <VStack id={args.id} mt="100">
-      <Heading>Meet The Team</Heading>
-      <Thin>...</Thin>
+      <Heading mb='6'>Meet The Team</Heading>
+      <Thin fontSize='1rem'>the people that made Hack The Ridge possible!</Thin>
       <div className='memberGrid'>
         <Grid
           templateColumns="repeat(4,1fr)"

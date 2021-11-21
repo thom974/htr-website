@@ -26,9 +26,12 @@ const Question = args => {
     return (
         <AccordionItem
         >
-            <AccordionButton _focus={{
+            <AccordionButton 
+            _focus={{
                 border: 'none'
-            }}>
+            }}
+            justifyContent='space-between'
+            >
                 <Flex pt='5' pb='5'>
                     <Heading fontSize='2rem'>
                         {args.question}
@@ -94,24 +97,40 @@ const FAQ = () => {
                         <Question >
                             {
                                 {
-                                    question: 'I have a question about...',
-                                    answer: 'This is a sample answer. Expect it to be relatively short, from one to two sentences.'
+                                    question: 'Do I need prior coding experience to participate?',
+                                    answer: 'There is no experience required to participate! You will have the opportunity to learn through our workshops or participate in our business stream.'
                                 }
                             }
                         </Question>
                         <Question >
                             {
                                 {
-                                    question: 'I have a question about...',
-                                    answer: 'This is a sample answer. Expect it to be relatively short, from one to two sentences.'
+                                    question: 'How are the teams going to work?',
+                                    answer: 'Teams can be made with one to four people. You can also compete solo. If you don\'t think you can find a team before HTR starts, there will be a team finder session during the event where you can find other members to work with.'
                                 }
                             }
                         </Question>
                         <Question >
                             {
                                 {
-                                    question: 'I have a question about...',
-                                    answer: 'This is a sample answer. Expect it to be relatively short, from one to two sentences.'
+                                    question: 'Can you tell me more about Hack the Ridge\'s virtual approach?',
+                                    answer: 'HTR will be operating 100% virtually this year, meaning all video communication between the staff and members will be done through Google Meet. Workshops hosted by our volunteers and sponsors will be held virtually through Google Meet or Zoom. During the hackathon, you must find a way to communicate and collaborate with your team: you could choose to meet up in person to work, or meet virtually.'
+                                }
+                            }
+                        </Question>
+                        <Question >
+                            {
+                                {
+                                    question: 'What are the prizes for winning?',
+                                    answer: 'Our current prize pool is worth $1000+, and is expected to grow. Winnings will be distributed through gift cards and swag. There will be two winners per stream: first place winner and runner up.'
+                                }
+                            }
+                        </Question>
+                        <Question >
+                            {
+                                {
+                                    question: 'Who can register?',
+                                    answer: 'Our hackathon is open for all high school students in HDSB. You don\'t need to be a student at Irqouois Ridge to participate!'
                                 }
                             }
                         </Question>
