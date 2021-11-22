@@ -42,10 +42,10 @@ const RegisterContact = (args) => {
         <VStack direction="row" w="full" pt='16' alignItems='flex-start'>
           
           <HStack pl='20' spacing={12} pb='6'>
-            <SocialIcon network='sharethis' />
+            <SocialIcon target='_blank' network='sharethis' url='https://docs.google.com/forms/d/1r8_S_RepQEqpBaR2SHO2B7iBX1AmAPgGZAg4JyorVmM/edit?usp=sharing'/>
             <Thin fontSize='1rem'>
               <Link 
-                href='https://docs.google.com/forms/d/1r8_S_RepQEqpBaR2SHO2B7iBX1AmAPgGZAg4JyorVmM/edit?usp=sharing '
+                href='https://docs.google.com/forms/d/1r8_S_RepQEqpBaR2SHO2B7iBX1AmAPgGZAg4JyorVmM/edit?usp=sharing'
                 isExternal
               >
                 register here!
@@ -54,13 +54,27 @@ const RegisterContact = (args) => {
           </HStack>
 
           <HStack pl='20' spacing={12} pb='6'>
-            <SocialIcon network='email' />
-            <Thin fontSize='1rem'>hacktheridge@gmail.com</Thin>
+            <SocialIcon network='mailto' url='mailto:hacktheridge@gmail.com'/>
+            <Thin fontSize='1rem'>
+              <Link 
+                href='mailto:hacktheridge@gmail.com'
+                isExternal
+              >
+                hacktheridge@gmail.com
+              </Link>
+            </Thin>
           </HStack>
 
           <HStack pl='20' spacing={12} pb='6'>
-            <SocialIcon network='instagram'/>
-            <Thin fontSize='1rem'>@hacktheridge</Thin>
+            <SocialIcon target='_blank' url='https://www.instagram.com/hacktheridge/' network='instagram' isExternal/>
+            <Thin fontSize='1rem'>
+              <Link 
+                href='https://www.instagram.com/hacktheridge/'
+                isExternal
+              >
+                @hacktheridge
+              </Link>
+            </Thin>
           </HStack>
 
           <HStack pl='20' spacing={12} pb='6'>
