@@ -130,7 +130,7 @@ const FAQ = () => {
                             {
                                 {
                                     question: 'Who can register?',
-                                    answer: 'Our hackathon is open for all high school students in HDSB. You don\'t need to be a student at Irqouois Ridge to participate!'
+                                    answer: 'Our hackathon is open for all high school students in HDSB. You don\'t need to be a student at Iroquois Ridge to participate!'
                                 }
                             }
                         </Question>
