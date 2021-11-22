@@ -22,7 +22,7 @@ function Member({ name, icon }) {
       justify="space-evenly"
       align="center"
     >
-      <Heading textAlign="center">{name}</Heading>
+      <Heading textAlign="center" fontSize='1.5rem' pb='6'>{name}</Heading>
       <Box boxSize="100px">
         <Image src={icon} alt="Img Not Found" borderRadius="full" />
       </Box>
