@@ -57,7 +57,7 @@ const Members = [
   />,
   <Member
     name="Tudor Barsan"
-    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
+    icon="https://cdn.discordapp.com/attachments/583816025808568336/912167043690795018/00100lPORTRAIT_00100_BURST20190916094852409_COVER_15.jpg"
   />,
   <Member
     name="Shayaan Kazi"
