@@ -33,7 +33,7 @@ const Question = args => {
             justifyContent='space-between'
             >
                 <Flex pt='5' pb='5'>
-                    <Heading fontSize='2rem'>
+                    <Heading fontSize='1.5rem'>
                         {args.question}
                     </Heading>
                 </Flex>
@@ -130,7 +130,15 @@ const FAQ = () => {
                             {
                                 {
                                     question: 'Who can register?',
-                                    answer: 'Our hackathon is open for all high school students in HDSB. You don\'t need to be a student at Irqouois Ridge to participate!'
+                                    answer: 'Our hackathon is open for all high school students in HDSB. You don\'t need to be a student at Iroquois Ridge to participate!'
+                                }
+                            }
+                        </Question>
+                        <Question >
+                            {
+                                {
+                                    question: 'What\'s the theme for Hack The Ridge?',
+                                    answer: 'This year, there is no set theme or sector. What you decide to focus your efforts on is completely up to you (as long as it\'s appropriate of course).'
                                 }
                             }
                         </Question>
