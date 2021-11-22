@@ -6,22 +6,28 @@ import '../styles/globals.css';
 
 import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
+import Head from 'next/head'
 
 import theme from '../src/theme/index';
 import '../src/theme/styles.css';
 
 const MyApp = ({ Component, pageProps }) => {
 	return (
-		<ChakraProvider theme={theme}>
-			<style global jsx>
-				{`
-					html {
-						scroll-behavior: smooth;
-					}
-				`}
-			</style>
-			<Component {...pageProps} />
-		</ChakraProvider>
+		<div>
+			<Head>
+				<title>Hack The Ridge</title>
+			</Head>
+			<ChakraProvider theme={theme}>
+				<style global jsx>
+					{`
+						html {
+							scroll-behavior: smooth;
+						}
+					`}
+				</style>
+				<Component {...pageProps} />
+			</ChakraProvider>
+		</div>
 	);
 };
 
