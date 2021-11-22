@@ -30,6 +30,9 @@ export default class World {
     this.currAnim = false
     this.mouseOver = false
 
+    this.lightDistance = 0
+    this.lightAngle = 0
+
     // Event listeners
     this.canvas.addEventListener('mouseenter', (client) => {
       this.mouseOver = true
@@ -54,6 +57,7 @@ export default class World {
       this.setLights()
       // this.setHelpers()
       this.setCameraDistance()
+      this.setLightDistance()
       this.updateMaterial()
 
       this.ready = true
@@ -120,10 +124,13 @@ export default class World {
     this.cameraDistance = this.camera.position.distanceTo(new THREE.Vector3(0))
   }
 
+  setLightDistance() {
+    this.lightDistance = this.directionalLight.position.distanceTo(new THREE.Vector3(0))
+  }
+
   updateMaterial() {
     this.scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
-        child.material.side = THREE.DoubleSide
         child.castShadow = true
       }
     })
@@ -185,9 +192,16 @@ export default class World {
     })
   }
 
+  updateLightsRotation() {
+    this.lightAngle += Math.PI * 0.0006
+    this.directionalLight.position.x = this.lightDistance * Math.cos(this.lightAngle)
+    this.directionalLight.position.z = this.lightDistance * Math.sin(this.lightAngle)
+  }
+
   update() {
     if (this.ready) {
       this.updateCameraRotation()
+      this.updateLightsRotation()
       this.renderer.composer.render();
     }
   }
