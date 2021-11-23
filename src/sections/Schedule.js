@@ -16,7 +16,7 @@ class Time {
     return (
       <Flex justify="space-between" w={{sm: '90vw', lg: "75vw"}} p="7">
         <Heading fontSize={{sm: 'md', lg: '2xl'}}>{this.time}</Heading>
-        <Text alignSelf='center' m='4'>/</Text>
+        <Text alignSelf='center' ml='2' mr='2'>/</Text>
         <Thin fontSize={{sm: 'sm', lg: '2xl'}}>{this.name}</Thin>
       </Flex>
     );
