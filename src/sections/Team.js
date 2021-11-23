@@ -1,7 +1,14 @@
 /* eslint-disable react/jsx-key */
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Image, Img } from "@chakra-ui/image";
-import { Box, Flex, Grid, Heading, VStack } from "@chakra-ui/layout";
+import {
+  Box,
+  Flex,
+  Grid,
+  Heading,
+  SimpleGrid,
+  VStack,
+} from "@chakra-ui/layout";
 import Thin from "./helpers";
 
 import { useEffect } from "react";
@@ -106,14 +113,14 @@ const Team = (args) => {
       <Heading mb="6">Meet The Team</Heading>
       <Thin fontSize="1rem">the people that made Hack The Ridge possible!</Thin>
       <div className="memberGrid">
-        <Grid
-          templateColumns="repeat(4,1fr)"
+        <SimpleGrid
+          columns={{ sm: 1, md: 2, xl: 3, "2xl": 4 }}
           pt="50"
           gap={10}
           placeItems="center"
         >
           {[...Members]}
-        </Grid>
+        </SimpleGrid>
       </div>
     </VStack>
   );
