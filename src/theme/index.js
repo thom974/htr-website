@@ -5,7 +5,7 @@ import {
   withDefaultVariant,
 } from "@chakra-ui/react";
 
-import { mode } from "@chakra-ui/theme-tools";
+import { mode, createBreakpoints } from "@chakra-ui/theme-tools";
 
 const inputSelectStyle = {
   variants: {
@@ -28,6 +28,13 @@ const brandRing = {
 
 const theme = extendTheme(
   {
+    breakpoints: createBreakpoints({
+      sm: "30em",
+      md: "48em",
+      lg: "62em",
+      xl: "80em",
+      "2xl": "96em",
+    }),
     fonts: {
       heading: `Major Mono Display, ${base.fonts?.heading}`,
       body: `Montserrat, ${base.fonts?.body}`,
