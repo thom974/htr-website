@@ -11,11 +11,7 @@ const Navigation = () => {
 
   return (
     <Flex w="full" mt={10} justifyContent="flex-end">
-      <HStack
-        spacing={59}
-        pr={59}
-        display={{ base: "none", sm: "none", lg: "flex" }}
-      >
+      <HStack spacing={59} pr={59} display={{ base: "none", lg: "flex" }}>
         <Heading as="a" href="#about" fontSize="lg">
           About
         </Heading>
