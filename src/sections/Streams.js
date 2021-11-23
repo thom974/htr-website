@@ -21,10 +21,10 @@ const StreamText = (args) => {
 
   return (
     <Container>
-      <Heading fontSize="2rem" textAlign={textAlign}>
+      <Heading mt={{sm: '5', md: '0'}} fontSize={{sm: '0.75rem', lg: "2rem"}} textAlign={textAlign}>
         {args.header}
       </Heading>
-      <Thin {...padding} mt="12" textAlign={textAlign} lineHeight="2rem" fontSize="0.9rem">
+      <Thin {...padding} mt={{sm: '6', lg: "12"}} textAlign={textAlign} lineHeight={{sm: '1.5rem', lg: "2rem"}} fontSize={{sm: '0.75rem', lg: "0.9rem"}}>
         {args.content}
       </Thin>
     </Container>
@@ -65,14 +65,14 @@ const Streams = (args) => {
   })
 
   return (
-    <VStack id={args.id} w="full" align="center" h="auto" mt="24">
+    <VStack id={args.id} w="full" align="center" h="auto" mt={{sm: '50', lg: "24"}}>
       <div className='streamsHeading'>
-        <Heading fontSize="3rem" mb="6">
+        <Heading fontSize={{sm: '1.25rem', lg: "3rem"}} mb={{sm: '4', lg: "6"}}>
           Streams
         </Heading>
-        <Thin fontSize="1rem">the competitions you can join</Thin>
+        <Thin fontSize={{sm: '0.75rem', lg: "1rem"}}>the competitions you can join</Thin>
       </div>
-      <SimpleGrid columns="2" w="100%" pt="70">
+      <SimpleGrid columns={{sm: '1', lg: "2"}} w="100%" pt={{sm: '4', lg: "70"}}>
         <div className='streamsTextOne'>
           <StreamText>
             {{

@@ -20,7 +20,7 @@ import RegisterContact from '../src/sections/RegisterContact';
 import FAQ from '../src/sections/FAQ';
 import Footer from '../src/sections/Footer';
 const Divide = () => {
-	return <Divider mt="100"></Divider>;
+	return <Divider mt={{sm: '50', lg: "100"}}></Divider>;
 };
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
 		<Container maxW="full" p="0" h="auto" alignItems="center">
 			<Navigation />
 
-			<Container maxW="75vw" p="0" mt="16" h="auto">
+			<Container maxW="75vw" p="0" mt={{sm:"0", md:"16"}} h="auto">
 				<Title />
 				<Description />
 				<Details />
