@@ -85,7 +85,7 @@ const Team = (args) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".memberGrid",
-        start: "center bottom",
+        start: "top top",
       },
       delay: 0,
     });
