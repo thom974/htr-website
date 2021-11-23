@@ -4,4 +4,4 @@ const Thin = (args) => {
   return <Text textStyle="thin" {...args}></Text>;
 };
 
-export default Thin
+export default Thin;

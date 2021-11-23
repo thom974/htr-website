@@ -102,7 +102,12 @@ const Sponsors = (args) => {
         <Thin fontSize="1rem">checkout our awesome supporters!</Thin>
       </div>
       <div className="sponsorsStack">
-        <SimpleGrid p="10" columns="3" rowGap="10" columnGap="5">
+        <SimpleGrid
+          p="10"
+          columns={{ sm: 1, md: 2, lg: 3 }}
+          rowGap="10"
+          columnGap="5"
+        >
           {[...sponsors]}
         </SimpleGrid>
       </div>
