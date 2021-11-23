@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Time = ({ time, name }) => {
   return (
-    <Flex justify="space-between" w={{ sm: "90vw", lg: "75vw" }} p="7">
-      <Heading fontSize={{ sm: "md", lg: "2xl" }}>{time}</Heading>
+    <Flex justify="space-between" w={{ base: "90vw", lg: "75vw" }} p="7">
+      <Heading fontSize={{ base: "md", lg: "2xl" }}>{time}</Heading>
       <Text alignSelf="center" ml="2" mr="2">
         /
       </Text>
-      <Thin fontSize={{ sm: "sm", lg: "2xl" }}>{name}</Thin>
+      <Thin fontSize={{ base: "sm", lg: "2xl" }}>{name}</Thin>
     </Flex>
   );
 };
@@ -69,7 +69,7 @@ const Schedule = (args) => {
   return (
     <Container textAlign="center" mt={{ sm: "50", lg: "24" }} id={args.id}>
       <div className="scheduleHeading">
-        <Heading fontSize={{ sm: "1.25rem", lg: "3rem" }} mb="5">
+        <Heading fontSize={{ sm: "1.25rem", lg: "3rem" }} mb="5" mt="5">
           Schedule
         </Heading>
         <Thin fontSize={{ sm: "0.75rem", lg: "1rem" }}>
@@ -78,7 +78,7 @@ const Schedule = (args) => {
       </div>
       <VStack mt="8">
         {Times.map((time, index) => {
-          return <div className={`schedule${index}`}>{time.jsx}</div>;
+          return <div className={`schedule${index}`}>{time}</div>;
         })}
       </VStack>
     </Container>
