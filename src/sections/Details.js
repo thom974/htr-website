@@ -11,12 +11,18 @@ const Details = () => {
 
   return (
     <div class='details'>
-      <HStack alignItems="center" justifyContent="space-evenly" mt="8" w="full">
-        <Heading fontSize="xl">Virtual Hackathon</Heading>
-        <Heading fontSize="xl">/</Heading>
-        <Heading fontSize="xl">December 11th, 2021</Heading>
-        <Heading fontSize="xl">/</Heading>
-        <Heading fontSize="xl">12 Hour Event</Heading>
+      <HStack 
+        alignItems="center" 
+        justifyContent="space-evenly" 
+        mt="8" 
+        w="full" 
+        spacing={{sm: '2'}}
+      >
+        <Heading fontSize={{sm: 'xs', lg:'xl'}}>Virtual Hackathon</Heading>
+        <Heading fontSize={{sm: 'xs', lg:'xl'}} pr={{sm: '4', md: '0'}}>/</Heading>
+        <Heading fontSize={{sm: 'xs', lg:'xl'}}>December 11th, 2021</Heading>
+        <Heading fontSize={{sm: 'xs', lg:'xl'}} pr={{sm: '4', md: '0'}}>/</Heading>
+        <Heading fontSize={{sm: 'xs', lg:'xl'}}>12 Hour Event</Heading>
       </HStack>
     </div>
   );

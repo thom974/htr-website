@@ -17,7 +17,7 @@ const Description = () => {
 
   return (
     <HStack alignItems="center" justifyContent="center" mt="8" w="full">
-      <Box mt="3" textStyle="thin" h="12">
+      <Box mt="3" textStyle="thin" h="12" fontSize={{sm: 'xl', lg: '2xl'}}>
         <p id="desc"></p>
       </Box>
     </HStack>

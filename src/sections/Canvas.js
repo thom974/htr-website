@@ -18,6 +18,7 @@ let instance = null;
 const Canvas = () => {  
   useEffect(() => {
     const anim = new Anim(document.querySelector("canvas.webgl"));
+    window.anim = anim
     gsap.fromTo('.canvas', {
       autoAlpha: 0
     }, {
@@ -27,7 +28,7 @@ const Canvas = () => {
   });
 
   return (
-    <VStack w="full" mt="100">
+    <VStack w="full" mt={{sm: '50', md: '100'}}>
       <div className='canvas'>
         <canvas className="webgl"></canvas>
       </div>

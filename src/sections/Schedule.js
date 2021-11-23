@@ -1,4 +1,4 @@
-import { Container, Flex, Heading, VStack } from "@chakra-ui/layout";
+import { Container, Flex, Heading, VStack, Text } from "@chakra-ui/layout";
 import Thin from "./helpers";
 
 import { useEffect } from 'react'
@@ -14,10 +14,10 @@ class Time {
   }
   get jsx() {
     return (
-      <Flex justify="space-between" w="75vw" p="7">
-        <Heading>{this.time}</Heading>
-        <p>/</p>
-        <Thin>{this.name}</Thin>
+      <Flex justify="space-between" w={{sm: '90vw', lg: "75vw"}} p="7">
+        <Heading fontSize={{sm: 'md', lg: '2xl'}}>{this.time}</Heading>
+        <Text alignSelf='center' m='4'>/</Text>
+        <Thin fontSize={{sm: 'sm', lg: '2xl'}}>{this.name}</Thin>
       </Flex>
     );
   }
@@ -65,12 +65,12 @@ const Schedule = (args) => {
   })
 
   return (
-    <Container textAlign="center" mt="24" id={args.id}>
+    <Container textAlign="center" mt={{sm: '50', lg: "24"}}id={args.id}>
       <div className='scheduleHeading'>
-      <Heading fontSize="3rem" mb="5">
+      <Heading fontSize={{ sm:'1.25rem',lg: "3rem"}} mb="5">
         Schedule
       </Heading>
-      <Thin fontSize="1rem">event activities, hour by hour</Thin>
+      <Thin fontSize={{ sm:'0.75rem', lg: "1rem"}}>event activities, hour by hour</Thin>
       </div>
       <VStack mt="8">
         {Times.map((time, index) => {
