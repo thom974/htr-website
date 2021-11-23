@@ -4,10 +4,10 @@ import { Image, Img } from "@chakra-ui/image";
 import { Box, Flex, Grid, Heading, VStack } from "@chakra-ui/layout";
 import Thin from "./helpers";
 
-import { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function Member({ name, icon }) {
   return (
@@ -22,7 +22,9 @@ function Member({ name, icon }) {
       justify="space-evenly"
       align="center"
     >
-      <Heading textAlign="center" fontSize='1.5rem' pb='6'>{name}</Heading>
+      <Heading textAlign="center" fontSize="1.5rem" pb="6">
+        {name}
+      </Heading>
       <Box boxSize="100px">
         <Image src={icon} alt="Img Not Found" borderRadius="full" />
       </Box>
@@ -66,11 +68,7 @@ const Members = [
 ].map((member, i) => {
   return (
     <div className={`member${i}`}>
-      <Member
-        name={member.props.name}
-        icon={member.props.icon}
-        key={`Member: ${i}`}
-      ></Member>
+      <Member name={member.props.name} icon={member.props.icon}></Member>
     </div>
   );
 });
@@ -79,35 +77,35 @@ const Team = (args) => {
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.memberGrid',
-        start: 'center bottom'
+        trigger: ".memberGrid",
+        start: "center bottom",
       },
-      delay: 0
-    })
+      delay: 0,
+    });
 
-    for (let i=0; i<Members.length; i++) {
-      const r = Math.floor(i / 4)
-      const c = i % 4
+    for (let i = 0; i < Members.length; i++) {
+      const r = Math.floor(i / 4);
+      const c = i % 4;
 
       if (r % 2 == 0) {
         tl.from(`.member${i}`, {
           x: -50 + -50 * c,
-          opacity: 0
-        })
+          opacity: 0,
+        });
       } else {
         tl.from(`.member${i}`, {
           x: 50 + 50 * c,
-          opacity: 0
-        })
+          opacity: 0,
+        });
       }
     }
-  })
+  });
 
   return (
     <VStack id={args.id} mt="100">
-      <Heading mb='6'>Meet The Team</Heading>
-      <Thin fontSize='1rem'>the people that made Hack The Ridge possible!</Thin>
-      <div className='memberGrid'>
+      <Heading mb="6">Meet The Team</Heading>
+      <Thin fontSize="1rem">the people that made Hack The Ridge possible!</Thin>
+      <div className="memberGrid">
         <Grid
           templateColumns="repeat(4,1fr)"
           pt="50"

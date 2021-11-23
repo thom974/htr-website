@@ -16,7 +16,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 function Sponsor({ name, icon, link }) {
   return (
-    // <GridItem colSpan="1">
     <Flex
       as="a"
       href={link}
@@ -31,7 +30,6 @@ function Sponsor({ name, icon, link }) {
     >
       <Image src={icon} alt="Image Not Found" />
     </Flex>
-    // </GridItem>
   );
 }
 
@@ -72,16 +70,13 @@ const sponsors = [
     icon="https://upload.wikimedia.org/wikipedia/commons/9/94/Tim_Hortons_Logo.png"
     link="https://www.timhortons.ca/"
   />,
-];
-
-const sponsorsWrap = (sponsors) => {
-  const sponsorsWrapped = [];
-  sponsors.forEach((sponsor, index) => {
-    sponsorsWrapped.push(<div className={`sponsor${index}`}>{sponsor}</div>);
-  });
-
-  return sponsorsWrapped;
-};
+].map((sponsor, i) => {
+  return (
+    <div className={`sponsor${i}`} key={i}>
+      {sponsor}
+    </div>
+  );
+});
 
 const Sponsors = (args) => {
   useEffect(() => {
@@ -108,7 +103,7 @@ const Sponsors = (args) => {
       </div>
       <div className="sponsorsStack">
         <SimpleGrid p="10" columns="3" rowGap="10" columnGap="5">
-          {[...sponsorsWrap(sponsors)]}
+          {[...sponsors]}
         </SimpleGrid>
       </div>
     </Container>
