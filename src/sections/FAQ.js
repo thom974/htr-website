@@ -116,7 +116,7 @@ const FAQ = () => {
             {{
               question: "Who can register?",
               answer:
-                "Our hackathon is open for all high school students in HDSB. You don't need to be a student at Iroquois Ridge to participate!",
+                "Our hackathon intended for students in HDSB, however you can join if you're outside of Halton. Must be a high school student!",
             }}
           </Question>
           <Question>
