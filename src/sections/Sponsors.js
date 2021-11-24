@@ -94,12 +94,12 @@ const Sponsors = (args) => {
   });
 
   return (
-    <Container mt="24" minW="full" left="0" textAlign="center" id={args.id}>
+    <Container mt={{base: '50', lg: "24"}} minW="full" left="0" textAlign="center" id={args.id}>
       <div className="sponsorsHeading">
-        <Heading fontSize="3rem" mb="6">
+        <Heading fontSize={{base: '1.25rem', lg: "3rem"}} mb="6">
           Sponsors
         </Heading>
-        <Thin fontSize="1rem">checkout our awesome supporters!</Thin>
+        <Thin fontSize={{base: '0.75rem', lg: "1rem"}}>checkout our awesome supporters!</Thin>
       </div>
       <div className="sponsorsStack">
         <SimpleGrid

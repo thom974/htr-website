@@ -108,9 +108,9 @@ const Team = (args) => {
   });
 
   return (
-    <VStack id={args.id} mt="100">
+    <VStack id={args.id} mt={{base: '50', lg: "100"}}>
       <Heading mb="6">Meet The Team</Heading>
-      <Thin fontSize="1rem">the people that made Hack The Ridge possible!</Thin>
+      <Thin fontSize={{base: '0.75rem', lg: "1rem"}}>the people that made Hack The Ridge possible!</Thin>
       <div className="memberGrid">
         <SimpleGrid
           columns={{ sm: 1, md: 2, xl: 3, "2xl": 4 }}

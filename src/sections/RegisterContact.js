@@ -45,10 +45,10 @@ const RegisterContact = (args) => {
   });
 
   return (
-    <VStack id={args.id} alignItems="left" mt="24">
+    <VStack id={args.id} alignItems="left" mt={{base: '50', lg: "24"}}>
       <div className="rcHeading">
-        <Heading mb="5">Register & Contact</Heading>
-        <Thin fontSize="1rem">sign up & get in touch with us!</Thin>
+        <Heading mb="5" fontSize={{base: '1.25rem', lg:'3rem'}}>Register & Contact</Heading>
+        <Thin fontSize={{base: '0.75rem', lg: "1rem"}}>sign up & get in touch with us!</Thin>
       </div>
       <div className="rcIcons">
         <VStack direction="row" w="full" pt="16" alignItems="flex-start">
