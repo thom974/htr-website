@@ -10,21 +10,31 @@ import Thin from "./helpers";
 
 import { useEffect } from "react";
 
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const StreamText = (args) => {
   args = args.children;
   const textAlign = args.right ? "right" : "left";
-  const padding = args.right ? { pl: '16' } : { pr: '16' }
+  const padding = args.right ? { pl: "16" } : { pr: "16" };
 
   return (
     <Container>
-      <Heading mt={{sm: '5', md: '0'}} fontSize={{sm: '0.75rem', lg: "2rem"}} textAlign={textAlign}>
+      <Heading
+        mt={{ base: "5", md: "0" }}
+        fontSize={{ base: "0.75rem", lg: "2rem" }}
+        textAlign={textAlign}
+      >
         {args.header}
       </Heading>
-      <Thin {...padding} mt={{sm: '6', lg: "12"}} textAlign={textAlign} lineHeight={{sm: '1.5rem', lg: "2rem"}} fontSize={{sm: '0.75rem', lg: "0.9rem"}}>
+      <Thin
+        {...padding}
+        mt={{ base: "6", lg: "12" }}
+        textAlign={textAlign}
+        lineHeight={{ base: "1.5rem", lg: "2rem" }}
+        fontSize={{ base: "0.75rem", lg: "0.9rem" }}
+      >
         {args.content}
       </Thin>
     </Container>
@@ -33,47 +43,62 @@ const StreamText = (args) => {
 
 const Streams = (args) => {
   useEffect(() => {
-    gsap.from('.streamsHeading', {
+    gsap.from(".streamsHeading", {
       scrollTrigger: {
-        trigger: '.streamsHeading',
-        start: 'bottom bottom',
+        trigger: ".streamsHeading",
+        start: "bottom bottom",
       },
       y: -50,
       opacity: 0,
-      duration: 1
-    })
+      duration: 1,
+    });
 
-    gsap.from('.streamsTextOne', {
+    gsap.from(".streamsTextOne", {
       scrollTrigger: {
-        trigger: '.streamsHeading',
-        start: 'bottom bottom'
+        trigger: ".streamsHeading",
+        start: "bottom bottom",
       },
       y: -100,
       opacity: 0,
-      duration: 2
-    })
+      duration: 2,
+    });
 
-    gsap.from('.streamsTextTwo', {
+    gsap.from(".streamsTextTwo", {
       scrollTrigger: {
-        trigger: '.streamsHeading',
-        start: 'bottom bottom'
+        trigger: ".streamsHeading",
+        start: "bottom bottom",
       },
       y: -100,
       opacity: 0,
-      duration: 2
-    })
-  })
+      duration: 2,
+    });
+  });
 
   return (
-    <VStack id={args.id} w="full" align="center" h="auto" mt={{sm: '50', lg: "24"}}>
-      <div className='streamsHeading'>
-        <Heading fontSize={{sm: '1.25rem', lg: "3rem"}} mb={{sm: '4', lg: "6"}}>
+    <VStack
+      id={args.id}
+      w="full"
+      align="center"
+      h="auto"
+      mt={{ base: "50", lg: "24" }}
+    >
+      <div className="streamsHeading">
+        <Heading
+          fontSize={{ base: "1.25rem", lg: "3rem" }}
+          mb={{ base: "4", lg: "6" }}
+        >
           Streams
         </Heading>
-        <Thin fontSize={{sm: '0.75rem', lg: "1rem"}}>the competitions you can join</Thin>
+        <Thin fontSize={{ base: "0.75rem", lg: "1rem" }}>
+          the competitions you can join
+        </Thin>
       </div>
-      <SimpleGrid columns={{sm: '1', lg: "2"}} w="100%" pt={{sm: '4', lg: "70"}}>
-        <div className='streamsTextOne'>
+      <SimpleGrid
+        columns={{ base: "1", lg: "2" }}
+        w="100%"
+        pt={{ base: "4", lg: "70" }}
+      >
+        <div className="streamsTextOne">
           <StreamText>
             {{
               header: "Coding Stream",
@@ -83,7 +108,7 @@ const Streams = (args) => {
             }}
           </StreamText>
         </div>
-        <div className='streamsTextTwo'>
+        <div className="streamsTextTwo">
           <StreamText>
             {{
               header: "Business Stream",

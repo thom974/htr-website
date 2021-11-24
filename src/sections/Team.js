@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-key */
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Image, Img } from "@chakra-ui/image";
-import { Box, Flex, Grid, Heading, VStack } from "@chakra-ui/layout";
+import { Box, Flex, Heading, SimpleGrid, VStack } from "@chakra-ui/layout";
 import Thin from "./helpers";
+import shayaan from "./img/shayaan.jpg";
 
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -26,13 +27,22 @@ function Member({ name, icon }) {
         {name}
       </Heading>
       <Box boxSize="100px">
-        <Image src={icon} alt="Img Not Found" borderRadius="full" />
+        {console.log(icon)}
+        <Image
+          src={icon}
+          w="100px"
+          h="100px"
+          fit="cover"
+          alt="Img Not Found"
+          borderRadius="full"
+        />
       </Box>
     </Flex>
   );
 }
 
 const Members = [
+  <Member name="Shayaan Kazi" icon={shayaan.src} />,
   <Member
     name="Aayaan Naqvi"
     icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
@@ -61,10 +71,6 @@ const Members = [
     name="Tudor Barsan"
     icon="https://cdn.discordapp.com/attachments/583816025808568336/912167043690795018/00100lPORTRAIT_00100_BURST20190916094852409_COVER_15.jpg"
   />,
-  <Member
-    name="Shayaan Kazi"
-    icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F7%2F7c%2FProfile_avatar_placeholder_large.png&f=1&nofb=1"
-  />,
 ].map((member, i) => {
   return (
     <div className={`member${i}`}>
@@ -78,7 +84,7 @@ const Team = (args) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".memberGrid",
-        start: "center bottom",
+        start: "top top",
       },
       delay: 0,
     });
@@ -102,18 +108,18 @@ const Team = (args) => {
   });
 
   return (
-    <VStack id={args.id} mt="100">
+    <VStack id={args.id} mt={{base: '50', lg: "100"}}>
       <Heading mb="6">Meet The Team</Heading>
-      <Thin fontSize="1rem">the people that made Hack The Ridge possible!</Thin>
+      <Thin fontSize={{base: '0.75rem', lg: "1rem"}}>the people that made Hack The Ridge possible!</Thin>
       <div className="memberGrid">
-        <Grid
-          templateColumns="repeat(4,1fr)"
+        <SimpleGrid
+          columns={{ sm: 1, md: 2, xl: 3, "2xl": 4 }}
           pt="50"
           gap={10}
           placeItems="center"
         >
           {[...Members]}
-        </Grid>
+        </SimpleGrid>
       </div>
     </VStack>
   );

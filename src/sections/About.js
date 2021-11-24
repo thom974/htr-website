@@ -4,11 +4,11 @@
 import { Flex, HStack, VStack, Heading } from "@chakra-ui/react";
 import Thin from "./helpers";
 
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
-import gsap from 'gsap'
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutText = () => {
   return (
@@ -20,35 +20,43 @@ const AboutText = () => {
 
 const About = (args) => {
   useEffect(() => {
-    gsap.from('.aboutHeading', {
+    gsap.from(".aboutHeading", {
       scrollTrigger: {
-        trigger: '.aboutHeading',
-        start: 'bottom bottom'
+        trigger: ".aboutHeading",
+        start: "bottom bottom",
       },
       x: -50,
       opacity: 0,
-      duration: 1
-    })
+      duration: 1,
+    });
 
-    gsap.from('.aboutText', {
+    gsap.from(".aboutText", {
       scrollTrigger: {
-        trigger: '.aboutText',
-        start: 'center bottom'
+        trigger: ".aboutText",
+        start: "center bottom",
       },
       x: 50,
       opacity: 0,
-      duration: 1
-    })
-  })
+      duration: 1,
+    });
+  });
 
   return (
-    <VStack mt={{sm: '50', lg: "100"}} w="full" alignItems="flex-start" id={args.id}>
-      <div className='aboutHeading'>
-        <Heading fontSize={{ sm: '1.25rem', lg: "3rem"}} mb={{ sm: '8', lg: "16"}}>
+    <VStack
+      mt={{ base: "50", lg: "100" }}
+      w="full"
+      alignItems="flex-start"
+      id={args.id}
+    >
+      <div className="aboutHeading">
+        <Heading
+          fontSize={{ base: "1.25rem", lg: "3rem" }}
+          mb={{ base: "8", lg: "16" }}
+        >
           Irhs{"'"} Annual Hackathon
         </Heading>
       </div>
-      <div className='aboutText'>
+      <div className="aboutText">
         <AboutText />
       </div>
     </VStack>
