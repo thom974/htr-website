@@ -16,6 +16,7 @@ const MyApp = ({ Component, pageProps }) => {
 		<div>
 			<Head>
 				<title>Hack The Ridge</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 			</Head>
 			<ChakraProvider theme={theme}>
 				<style global jsx>

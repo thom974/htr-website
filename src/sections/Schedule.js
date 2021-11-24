@@ -15,7 +15,7 @@ const Time = ({ time, name }) => {
       <Text alignSelf="center" ml="2" mr="2">
         /
       </Text>
-      <Thin fontSize={{ base: "sm", lg: "2xl" }}>{name}</Thin>
+      <Thin fontSize={{ base: "base", lg: "2xl" }}>{name}</Thin>
     </Flex>
   );
 };
@@ -67,12 +67,12 @@ const Schedule = (args) => {
   });
 
   return (
-    <Container textAlign="center" mt={{ sm: "50", lg: "24" }} id={args.id}>
+    <Container textAlign="center" mt={{ base: "50", lg: "24" }} id={args.id}>
       <div className="scheduleHeading">
-        <Heading fontSize={{ sm: "1.25rem", lg: "3rem" }} mb="5" mt="5">
+        <Heading fontSize={{ base: "1.25rem", lg: "3rem" }} mb="5" mt="5">
           Schedule
         </Heading>
-        <Thin fontSize={{ sm: "0.75rem", lg: "1rem" }}>
+        <Thin fontSize={{ base: "0.75rem", lg: "1rem" }}>
           event activities, hour by hour
         </Thin>
       </div>

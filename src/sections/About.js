@@ -13,9 +13,9 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutText = () => {
   return (
     <Thin
-      pl={{ sm: "4", lg: "24" }}
-      lineHeight={{ sm: "3rem", lg: "4rem" }}
-      fontSize={{ sm: "1rem", lg: "1.25rem" }}
+      pl={{ base: "4", lg: "24" }}
+      lineHeight={{ base: "3rem", lg: "4rem" }}
+      fontSize={{ base: "1rem", lg: "1.25rem" }}
     >
       Hack The Ridge is Iroquois Ridge High School’s annual hackathon and pitch
       competition where students collaborate to come up with solutions to
@@ -59,15 +59,15 @@ const About = (args) => {
 
   return (
     <VStack
-      mt={{ sm: "50", lg: "100" }}
+      mt={{ base: "50", lg: "100" }}
       w="full"
       alignItems="flex-start"
       id={args.id}
     >
       <div className="aboutHeading">
         <Heading
-          fontSize={{ sm: "1.25rem", lg: "3rem" }}
-          mb={{ sm: "8", lg: "16" }}
+          fontSize={{ base: "1.25rem", lg: "3rem" }}
+          mb={{ base: "8", lg: "16" }}
         >
           Irhs{"'"} Annual Hackathon
         </Heading>

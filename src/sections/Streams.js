@@ -22,18 +22,18 @@ const StreamText = (args) => {
   return (
     <Container>
       <Heading
-        mt={{ sm: "5", md: "0" }}
-        fontSize={{ sm: "0.75rem", lg: "2rem" }}
+        mt={{ base: "5", md: "0" }}
+        fontSize={{ base: "0.75rem", lg: "2rem" }}
         textAlign={textAlign}
       >
         {args.header}
       </Heading>
       <Thin
         {...padding}
-        mt={{ sm: "6", lg: "12" }}
+        mt={{ base: "6", lg: "12" }}
         textAlign={textAlign}
-        lineHeight={{ sm: "1.5rem", lg: "2rem" }}
-        fontSize={{ sm: "0.75rem", lg: "0.9rem" }}
+        lineHeight={{ base: "1.5rem", lg: "2rem" }}
+        fontSize={{ base: "0.75rem", lg: "0.9rem" }}
       >
         {args.content}
       </Thin>
@@ -80,23 +80,23 @@ const Streams = (args) => {
       w="full"
       align="center"
       h="auto"
-      mt={{ sm: "50", lg: "24" }}
+      mt={{ base: "50", lg: "24" }}
     >
       <div className="streamsHeading">
         <Heading
-          fontSize={{ sm: "1.25rem", lg: "3rem" }}
-          mb={{ sm: "4", lg: "6" }}
+          fontSize={{ base: "1.25rem", lg: "3rem" }}
+          mb={{ base: "4", lg: "6" }}
         >
           Streams
         </Heading>
-        <Thin fontSize={{ sm: "0.75rem", lg: "1rem" }}>
+        <Thin fontSize={{ base: "0.75rem", lg: "1rem" }}>
           the competitions you can join
         </Thin>
       </div>
       <SimpleGrid
-        columns={{ sm: "1", lg: "2" }}
+        columns={{ base: "1", lg: "2" }}
         w="100%"
-        pt={{ sm: "4", lg: "70" }}
+        pt={{ base: "4", lg: "70" }}
       >
         <div className="streamsTextOne">
           <StreamText>

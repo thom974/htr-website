@@ -15,7 +15,7 @@ const Title = () => {
   return (
     <VStack alignItems="center" w="full">
       <div className="title">
-        <Heading fontSize={{ sm: "6xl", lg: "8xl" }}>Hack The Ridge</Heading>
+        <Heading fontSize={{ base: '4xl', sm: "6xl", lg: "8xl" }} textAlign='center'>Hack The Ridge</Heading>
       </div>
     </VStack>
   );
