@@ -20,16 +20,16 @@ import RegisterContact from '../src/sections/RegisterContact';
 import FAQ from '../src/sections/FAQ';
 import Footer from '../src/sections/Footer';
 const Divide = () => {
-	return <Divider mt={{ sm: '50', lg: '100' }}></Divider>;
+	return <Divider mt={{ base: '50', lg: '100' }}></Divider>;
 };
 
 const Home = () => {
 	return (
-		<Container maxW="full" p="0" h="auto" alignItems="center">
+		<Container maxW={{base: '95vw', lg:"full"}} p="0" h="auto" alignItems="center">
 			<Navigation />
 
 			<Container
-				maxW={{ base: '90vw', md: '80vw', lg: '75vw' }}
+				maxW={{ base: '85vw', md: '80vw', lg: '75vw' }}
 				p="0"
 				mt={{ sm: '0', md: '16' }}
 				h="auto"

@@ -18,15 +18,15 @@ const Details = () => {
         w="full"
         spacing={{ sm: "2" }}
       >
-        <Heading fontSize={{ sm: "xs", lg: "xl" }}>Virtual Hackathon</Heading>
-        <Heading fontSize={{ sm: "xs", lg: "xl" }} pr={{ sm: "4", md: "0" }}>
+        <Heading fontSize={{ base: '0.5rem', sm: "xs", lg: "xl" }}>Virtual Hackathon</Heading>
+        <Heading fontSize={{ base: '0.5rem', sm: "xs", lg: "xl" }} pl={{ base: '6', sm: "4", md: "0" }} pr={{ base: '6', sm: "4", md: "0" }}>
           /
         </Heading>
-        <Heading fontSize={{ sm: "xs", lg: "xl" }}>December 11th, 2021</Heading>
-        <Heading fontSize={{ sm: "xs", lg: "xl" }} pr={{ sm: "4", md: "0" }}>
+        <Heading fontSize={{ base: '0.5rem', sm: "xs", lg: "xl" }}>December 11th, 2021</Heading>
+        <Heading fontSize={{ base: '0.5rem', sm: "xs", lg: "xl" }} pl={{ base: '6', sm: "4", md: "0" }} pr={{ base: '6', sm: "4", md: "0" }}>
           /
         </Heading>
-        <Heading fontSize={{ sm: "xs", lg: "xl" }}>12 Hour Event</Heading>
+        <Heading fontSize={{ base: '0.5rem', sm: "xs", lg: "xl" }}>12 Hour Event</Heading>
       </HStack>
     </div>
   );

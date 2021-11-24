@@ -32,7 +32,7 @@ const Canvas = () => {
   });
 
   return (
-    <VStack w="full" mt={{ sm: "50", md: "100" }}>
+    <VStack w="full" mt={{ base:'26', sm: "50", md: "100" }}>
       <div className="canvas">
         <canvas className="webgl"></canvas>
       </div>
