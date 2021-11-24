@@ -28,7 +28,14 @@ function Member({ name, icon }) {
       </Heading>
       <Box boxSize="100px">
         {console.log(icon)}
-        <Image src={icon} alt="Img Not Found" borderRadius="full" />
+        <Image
+          src={icon}
+          w="100px"
+          h="100px"
+          fit="cover"
+          alt="Img Not Found"
+          borderRadius="full"
+        />
       </Box>
     </Flex>
   );
