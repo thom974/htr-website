@@ -25,7 +25,13 @@ const Divide = () => {
 
 const Home = () => {
 	return (
-		<Container maxW={{base: '95vw', lg:"full"}} p="0" h="auto" alignItems="center">
+		<Container
+			maxW={{ base: '95vw', lg: 'full' }}
+			p="0"
+			h="auto"
+			alignItems="center"
+			overflowX="clip"
+		>
 			<Navigation />
 
 			<Container

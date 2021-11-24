@@ -32,12 +32,12 @@ const Question = (args) => {
         justifyContent="space-between"
       >
         <Flex pt="5" pb="5">
-          <Heading fontSize={{base: '1rem', lg: "1.5rem"}}>{args.question}</Heading>
+          <Heading fontSize="1.5rem">{args.question}</Heading>
         </Flex>
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pt="5" pb="5">
-        <Text fontSize={{base: '0.85rem', lg: "1.5rem"}}>{args.answer}</Text>
+        <Text fontSize="1rem">{args.answer}</Text>
       </AccordionPanel>
     </AccordionItem>
   );
@@ -71,18 +71,18 @@ const FAQ = () => {
 
   return (
     <SimpleGrid
-      mt={{base: '50', lg: "24"}}
+      mt="24"
       w="full"
       templateColumns={{ sm: "1fr", lg: "1fr 10fr", "2xl": "2fr 3fr" }}
       spacing={20}
     >
       <VStack alignSelf="center">
-        <Heading fontSize={{base: '4rem', sm: '6rem', lg: "10rem"}} mb={{base: '1', lg: "5"}} className="faqHeading">
+        <Heading fontSize={"10rem"} mb="5" className="faqHeading">
           FAQ
         </Heading>
       </VStack>
       <div alignSelf="center" className="faqInfo">
-        <Accordion allowToggle allowMultiple mb={{base: '5', sm: '0'}}>
+        <Accordion allowToggle allowMultiple>
           <Question>
             {{
               question: "Do I need prior coding experience to participate?",
