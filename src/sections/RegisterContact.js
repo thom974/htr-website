@@ -45,10 +45,14 @@ const RegisterContact = (args) => {
   });
 
   return (
-    <VStack id={args.id} alignItems="left" mt={{base: '50', lg: "24"}}>
+    <VStack id={args.id} alignItems="left" mt={{ base: "50", lg: "24" }}>
       <div className="rcHeading">
-        <Heading mb="5" fontSize={{base: '1.25rem', lg:'3rem'}}>Register & Contact</Heading>
-        <Thin fontSize={{base: '0.75rem', lg: "1rem"}}>sign up & get in touch with us!</Thin>
+        <Heading mb="5" fontSize={{ base: "1.25rem", lg: "3rem" }}>
+          Register & Contact
+        </Heading>
+        <Thin fontSize={{ base: "0.75rem", lg: "1rem" }}>
+          sign up & get in touch with us!
+        </Thin>
       </div>
       <div className="rcIcons">
         <VStack direction="row" w="full" pt="16" alignItems="flex-start">
@@ -67,7 +71,11 @@ const RegisterContact = (args) => {
             url="https://www.instagram.com/hacktheridge/"
             network="instagram"
           />
-          <Icon text="coming soon!" url={null} network="discord" />
+          <Icon
+            text="Join our discord server"
+            url="https://discord.gg/mcwPcf8QUa"
+            network="discord"
+          />
           <Icon text="devpost: coming soon!" url={null} network="rss" />
         </VStack>
       </div>
