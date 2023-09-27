@@ -1,7 +1,6 @@
 /**
  * IMPORTS
  */
-import { omitThemingProps } from "@chakra-ui/system";
 import * as THREE from "three";
 import Anim from "./Anim";
 import gsap from "gsap";
@@ -101,8 +100,8 @@ export default class World {
   }
 
   setLights() {
-    this.ambientLight = new THREE.AmbientLight("#ffffff", 0.25);
-    this.directionalLight = new THREE.DirectionalLight("#c0caed", 2);
+    this.ambientLight = new THREE.AmbientLight("#ffffff", 2);
+    this.directionalLight = new THREE.DirectionalLight("#c0caed", 15);
     this.directionalLight.position.set(15, 20, 30);
     this.directionalLight.castShadow = true;
     this.directionalLight.shadow.mapSize.set(2048, 2048);
@@ -211,7 +210,7 @@ export default class World {
     if (this.ready) {
       this.updateCameraRotation();
       this.updateLightsRotation();
-      this.renderer.composer.render();
+      this.renderer.composer?.render();
     }
   }
 }
